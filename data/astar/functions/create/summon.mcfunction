@@ -1,0 +1,2 @@
+scoreboard players set vertical astar.g 0
+execute if loaded ~ ~ ~ align xyz positioned ~ ~-1 ~ unless entity @n[type=marker,tag=astar,predicate=!astar:is_end,dx=0,dy=2,dz=0] positioned ~.5 ~1.5 ~.5 summon marker run function astar:create
