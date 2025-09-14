@@ -1,19 +1,36 @@
-{"values":[
+{
+  "values": [
     "air",
     "void_air",
     "cave_air",
-    "short_grass",
+    {
+      "id": "grass",
+      "required": false
+    },
+    {
+      "id": "short_grass",
+      "required": false
+    },
     "fern",
     "dead_bush",
     "bush",
-    "short_dry_grass",
-    "tall_dry_grass",
+    {
+      "id": "short_dry_grass",
+      "required": false
+    },
+    {
+      "id": "tall_dry_grass",
+      "required": false
+    },
     "seagrass",
     "tall_seagrass",
     "snow",
     "vine",
     "glow_lichen",
-    "resin_clump",
+    {
+      "id": "resin_clump",
+      "required": false
+    },
     "light",
     "tall_grass",
     "large_fern",
@@ -21,7 +38,11 @@
     "warped_roots",
     "nether_sprouts",
     "crimson_roots",
-    "leaf_litter",
+    {
+      "id": "leaf_litter",
+      "required": false
+    },
     "hanging_roots",
     "#flowers"
-]}
+  ]
+}
