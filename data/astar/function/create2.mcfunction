@@ -1,7 +1,7 @@
 # Tags
 tag @s add astar
 tag @s add astar.path
-execute if entity @n[type=marker,tag=astar.end,distance=..0.5] run tag @s add astar.finalizer
+execute if entity @n[predicate=astar:is_end,distance=..0.5] run tag @s add astar.finalizer
 
 # Set Own Id + Set Parent
 execute store result score @s astar.i run scoreboard players add counter astar.i 1

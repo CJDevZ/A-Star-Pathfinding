@@ -1,0 +1,8 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:marker",
+    "nbt": "{UUID:[I;468780849,-1207613367,-1699389816,-335253658]}"
+  }
+}

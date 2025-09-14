@@ -1,3 +1,4 @@
+tag @s add astar.traveled
 tag @s add astar.cur
 scoreboard players reset vertical astar.g
 
