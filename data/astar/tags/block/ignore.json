@@ -3,17 +3,13 @@
     "air",
     "void_air",
     "cave_air",
-    {
-      "id": "grass",
-      "required": false
-    },
-    {
-      "id": "short_grass",
-      "required": false
-    },
+    "short_grass",
     "fern",
     "dead_bush",
-    "bush",
+    {
+      "id": "bush",
+      "required": false
+    },
     {
       "id": "short_dry_grass",
       "required": false
