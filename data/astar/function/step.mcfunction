@@ -6,7 +6,7 @@ scoreboard players reset vertical astar.g
 execute positioned ~ ~ ~1 unless function astar:create/replace run function astar:create/summon
 execute positioned ~1 ~ ~ unless function astar:create/replace run function astar:create/summon
 execute positioned ~ ~ ~-1 unless function astar:create/replace run function astar:create/summon
-execute positioned ~-1 ~ ~1 unless function astar:create/replace run function astar:create/summon
+execute positioned ~-1 ~ ~ unless function astar:create/replace run function astar:create/summon
 # Diagonal - Replace
 execute positioned ~-1 ~ ~-1 unless function astar:create/replace run function astar:create/summon
 execute positioned ~1 ~ ~-1 unless function astar:create/replace run function astar:create/summon
