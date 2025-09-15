@@ -11,6 +11,8 @@ execute if block ~ ~-1 ~ #astar:ignore positioned ~ ~-1 ~ run return run functio
 execute unless score vertical astar.g matches -2..1 run return run kill @s
 execute positioned ~ ~-1 ~ align xyz if entity @n[type=marker,tag=astar,tag=!astar.create,predicate=!astar:is_end,dx=0,dy=2,dz=0] run return run kill @s
 execute unless block ~ ~1 ~ #astar:ignore run return run kill @s
+execute if block ~ ~ ~ #astar:impassable run return run kill @s
+execute if block ~ ~1 ~ #astar:impassable run return run kill @s
 
 tag @s remove astar.create
 tp ~ ~ ~

@@ -6,3 +6,7 @@ scoreboard players operation @s astar.f += @s astar.h
 scoreboard players operation @s astar.f += @s astar.h
 scoreboard players operation @s astar.f += @s astar.h
 scoreboard players operation @s astar.f /= 2 __int__
+
+execute if predicate astar:penalty/near_damage run return run scoreboard players add @s astar.f 16
+execute if predicate astar:penalty/near_danger run return run scoreboard players add @s astar.f 8
+execute if block ~ ~ ~ #astar:penalty/disliked run scoreboard players add @s astar.f 8

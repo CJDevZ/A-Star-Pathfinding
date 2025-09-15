@@ -16,6 +16,6 @@ execute at @n[type=marker,tag=astar.cur] if predicate astar:diagonal run scorebo
 function astar:calculate/distance_end
 
 # Position Again
-tp @s ~ ~ ~
+tp ~ ~ ~
 
 function astar:add_up

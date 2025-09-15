@@ -1,5 +1,6 @@
 {
   "values": [
+    "#astar:impassable",
     "air",
     "void_air",
     "cave_air",

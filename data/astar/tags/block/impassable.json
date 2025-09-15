@@ -1,0 +1,11 @@
+{
+    "values": [
+        "#fire",
+        "#fences",
+        "#fence_gates",
+        "powder_snow",
+        "lava",
+        "sweet_berry_bush",
+        "#astar:penalty/danger"
+    ]
+}
