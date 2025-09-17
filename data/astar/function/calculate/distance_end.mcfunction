@@ -1,7 +1,12 @@
-# TODO: Calculate Distance without Air Travel — Actual Distance — Makes Pathfinding Faster
-#execute unless block ~ ~ ~ #astar:ignore run scoreboard players add @s astar.h 14
-#execute unless block ~ ~ ~ #astar:ignore positioned ~ ~1 ~ run return run function astar:calculate/distance_end
-#execute if block ~ ~-1 ~ #astar:ignore run scoreboard players add @s astar.h 14
-#execute if block ~ ~-1 ~ #astar:ignore positioned ~ ~-1 ~ run return run function astar:calculate/distance_end
-tp ~ ~ ~
-execute facing entity b14fb83c-b441-457a-890f-4aabcfb6cb26 eyes positioned ^ ^ ^0.87 align xyz positioned ~.5 ~.5 ~.5 run function astar:calculate/check_end
+execute store result score x astar.h run data get entity @s Pos[0]
+execute store result score y astar.h run data get entity @s Pos[1]
+execute store result score z astar.h run data get entity @s Pos[2]
+data modify storage astar:math transformation set value [0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,1f]
+execute store result storage astar:math transformation[0] float 1 run scoreboard players operation x astar.h -= endx astar.h
+execute store result storage astar:math transformation[4] float 1 run scoreboard players operation z astar.h -= endz astar.h
+data modify entity d385fd95-56dd-45b0-bbc9-6a258183f0b5 transformation set from storage astar:math transformation
+execute store result score @s astar.h run data get entity d385fd95-56dd-45b0-bbc9-6a258183f0b5 transformation.scale[0] 10
+# Vertical
+scoreboard players operation y astar.h -= endy astar.h
+scoreboard players operation y astar.h *= 14 __int__
+scoreboard players operation @s astar.h += y astar.h

@@ -1,0 +1,24 @@
+[
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:location_check",
+        "predicate": {
+          "block": {
+            "blocks": "#astar:penalty/disliked"
+          }
+        }
+      },
+      {
+        "condition": "minecraft:location_check",
+        "offsetY": -1,
+        "predicate": {
+          "block": {
+            "blocks": "#astar:penalty/disliked"
+          }
+        }
+      }
+    ]
+  }
+]
