@@ -2,11 +2,12 @@
 kill @e[type=marker,tag=astar]
 # End Marker: [I;-1320175556,-1270790790,-1995486549,-810104026]
 # Start Marker: [I;468780849,-1207613367,-1699389816,-335253658]
-# Reset Id Counter
-scoreboard players reset counter astar.i
 # Summon Markers for Endpoints
 execute align xyz run summon marker ~.5 ~.5 ~.5 {UUID:[I;-1320175556,-1270790790,-1995486549,-810104026],Tags:["astar"]}
 execute at @s align xyz run summon marker ~.5 ~.5 ~.5 {UUID:[I;468780849,-1207613367,-1699389816,-335253658],Tags:["astar"]}
+execute at 1bf10731-b805-4849-9ab5-5e88ec046f66 align xyz if entity @n[predicate=astar:is_end,dx=0,dy=0,dz=0] run return run kill @e[type=marker,tag=astar,dx=0,dy=0,dz=0,limit=2]
+# Reset Id Counter
+scoreboard players reset counter astar.i
 # Summon Display Entity for Distance maths
 execute as d385fd95-56dd-45b0-bbc9-6a258183f0b5 at @s unless loaded ~ ~ ~ run kill @s
 execute unless entity d385fd95-56dd-45b0-bbc9-6a258183f0b5 at @s run summon block_display ~ ~ ~ {UUID:[I;-746193515,1457341872,-1144427995,-2122059595],Tags:["astar.math"],view_range:0,width:0,height:0}

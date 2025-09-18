@@ -1,0 +1,10 @@
+{
+    "values":[
+        "#wool_carpets",
+        "moss_carpet",
+        {
+            "id": "pale_moss_carpet",
+            "required": false
+        }
+    ]
+}
