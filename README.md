@@ -6,10 +6,15 @@ Please also contribute to this project. I don't have infinite time on my hands �
 ## 📖 Usage
 Call the `astar:_` function and use the remaining markers tagged `astar` to guide anything\
 The starting position of the path will be located at the current entity, with the end position being the current position in the context\
-E.g. `execute as @s at @p[distance=1..] run function astar:_`
+E.g. `execute as @s at @p[distance=1..] run function astar:_`\
+Note that floating destination will result in failure
 
 I recommend setting the `maxCommandChainLength` gamerule high enough for your terrain, or restrict the path to a maximum of ~10 blocks — otherwise, temporary markers may stay once the limit is reached
 
+### Config
+The configuration is stored in the `astar.config` scoreboard objective.\
+You can set the **maxDistance** that the pathfinder is allowed to travel before it finalizes the path.\
+To avoid conflicts with others' usage, do `scoreboard players reset * astar.config` before doing your logic
 ### Block Tags
 `#astar:climbable` — climbable\
 `#astar:obstructs_floor` — traversable, no descent\

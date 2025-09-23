@@ -1,4 +1,5 @@
 tag @s add astar.traveled
+execute if score @s astar.g >= maxDistance astar.config run return run tag @s add astar.finalizer
 tag @s add astar.cur
 scoreboard players reset vertical astar.g
 

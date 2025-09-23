@@ -1,3 +1,5 @@
+# Fail if target position is in the air
+execute if block ~ ~-1 ~ #astar:ignore unless block ~ ~ ~ #astar:obstructs_floor run return fail
 # Prepare for next pathfinding
 kill @e[type=marker,tag=astar]
 # End Marker: [I;-1320175556,-1270790790,-1995486549,-810104026]
@@ -22,7 +24,9 @@ execute as 1bf10731-b805-4849-9ab5-5e88ec046f66 at @s run function astar:step
 # Loop till maxCommandChainLength or path is found
 function astar:loop
 # Mark the shortest path
-execute as @n[type=marker,tag=astar.finalizer] run function astar:finalize
-execute unless entity @n[type=marker,tag=astar.finalizer] at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[tag=astar.path] run function astar:finalize
+execute at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[type=marker,tag=astar.finalizer,tag=!astar.finished] run function astar:finalize
+execute unless entity @n[type=marker,tag=astar.finalizer,tag=!astar.finished] at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[tag=astar.path,tag=!astar.finished] run function astar:finalize
 # Only leave the correct path
-kill @e[type=marker,tag=astar,tag=!astar.finished]
+kill @e[type=marker,tag=astar.path,tag=!astar.finished]
+kill 1bf10731-b805-4849-9ab5-5e88ec046f66
+kill b14fb83c-b441-457a-890f-4aabcfb6cb26
