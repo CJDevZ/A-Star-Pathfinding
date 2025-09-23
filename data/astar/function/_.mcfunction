@@ -24,8 +24,8 @@ execute as 1bf10731-b805-4849-9ab5-5e88ec046f66 at @s run function astar:step
 # Loop till maxCommandChainLength or path is found
 function astar:loop
 # Mark the shortest path
-execute at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[type=marker,tag=astar.finalizer,tag=!astar.finished] run function astar:finalize
 execute unless entity @n[type=marker,tag=astar.finalizer,tag=!astar.finished] at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[tag=astar.path,tag=!astar.finished] run function astar:finalize
+execute at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[type=marker,tag=astar.finalizer,tag=!astar.finished] run function astar:finalize
 # Only leave the correct path
 kill @e[type=marker,tag=astar.path,tag=!astar.finished]
 kill 1bf10731-b805-4849-9ab5-5e88ec046f66
