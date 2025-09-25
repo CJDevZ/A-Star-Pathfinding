@@ -1,0 +1,26 @@
+{
+  "condition": "minecraft:entity_scores",
+  "entity": "this",
+  "scores": {
+    "astar.f": {
+      "max": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "min"
+        },
+        "score": "astar.f"
+      }
+    },
+    "astar.h": {
+      "max": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "min"
+        },
+        "score": "astar.h"
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
-# Fail if target position is in the air
-execute if block ~ ~-1 ~ #astar:ignore unless block ~ ~ ~ #astar:obstructs_floor run return fail
+# Fail if target position is in the air & there's infinite max distance
+execute if score maxDistance astar.config matches -2147483648..2147483647 if block ~ ~-1 ~ #astar:ignore unless block ~ ~ ~ #astar:obstructs_floor run return fail
 # Prepare for next pathfinding
 kill @e[type=marker,tag=astar]
 # End Marker: [I;-1320175556,-1270790790,-1995486549,-810104026]
@@ -30,3 +30,5 @@ execute at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[type=marker,tag=astar.fina
 kill @e[type=marker,tag=astar.path,tag=!astar.finished]
 kill 1bf10731-b805-4849-9ab5-5e88ec046f66
 kill b14fb83c-b441-457a-890f-4aabcfb6cb26
+# Return true if path to destination was found — not if max distance was reached though
+return run execute align xyz if entity @n[type=marker,tag=astar,tag=astar.finalizer,dx=0,dy=0,dz=0]
