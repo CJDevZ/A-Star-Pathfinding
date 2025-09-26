@@ -1,5 +1,5 @@
 tag @s add astar
 tag @s add astar.create
 
-scoreboard players set vertical astar.g 0
+scoreboard players reset vertical astar.g
 function astar:create1

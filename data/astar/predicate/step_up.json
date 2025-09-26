@@ -16,17 +16,21 @@
       "condition": "minecraft:all_of",
       "terms": [
         {
-          "condition": "minecraft:value_check",
-          "value": {
-            "type": "minecraft:score",
-            "target": {
-              "type": "minecraft:fixed",
-              "name": "vertical"
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:value_check",
+            "value": {
+              "type": "minecraft:score",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "vertical"
+              },
+              "score": "astar.g"
             },
-            "score": "astar.g"
-          },
-          "range": {
-            "min": 0
+            "range": {
+              "min": -2147483648,
+              "max": 0
+            }
           }
         },
         {

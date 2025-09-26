@@ -6,4 +6,4 @@ execute store result storage astar:math transformation[0] float 1 run scoreboard
 execute store result storage astar:math transformation[4] float 1.4 run scoreboard players operation y astar.h -= endy astar.h
 execute store result storage astar:math transformation[8] float 1 run scoreboard players operation z astar.h -= endz astar.h
 data modify entity d385fd95-56dd-45b0-bbc9-6a258183f0b5 transformation set from storage astar:math transformation
-execute store result score @s astar.h run data get entity d385fd95-56dd-45b0-bbc9-6a258183f0b5 transformation.scale[0] 10
+execute store result score @s astar.h run data get entity d385fd95-56dd-45b0-bbc9-6a258183f0b5 transformation.scale[0] 15
