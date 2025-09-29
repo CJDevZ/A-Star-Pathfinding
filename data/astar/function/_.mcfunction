@@ -21,6 +21,7 @@ execute store result score endz astar.h run data get entity b14fb83c-b441-457a-8
 execute store result score counter astar.p run scoreboard players set 1bf10731-b805-4849-9ab5-5e88ec046f66 astar.i 0
 # First Step as Start
 execute as 1bf10731-b805-4849-9ab5-5e88ec046f66 at @s run function astar:step
+execute as 1bf10731-b805-4849-9ab5-5e88ec046f66 at @s summon marker run function astar:create
 # Loop till maxCommandChainLength or path is found
 function astar:loop
 # Mark the shortest path

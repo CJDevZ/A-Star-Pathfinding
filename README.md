@@ -24,9 +24,9 @@ To avoid conflicts with others' usage, do `scoreboard players reset * astar.conf
 `#astar:impassable_wall` — impassible wall
 
 ### Penalty Block Tags
-`#astar:penalty/damage` 16 — nearby\
-`#astar:penalty/danger` 8 — nearby\
-`#astar:penalty/disliked` 8
+`#astar:penalty/damage` 160 — nearby\
+`#astar:penalty/danger` 80 — nearby\
+`#astar:penalty/disliked` 80
 
 You may add a function to the `#astar:eval_node` tag to modify costs — `return <any>` results in only `impassable` being effective\
 — impassible via `kill @s` — add/remove cost via `scoreboard players add/remove @s astar.f <amount>`
@@ -38,11 +38,11 @@ You may add a function to the `#astar:eval_node` tag to modify costs — `return
 
 data modify storage code:pathfinding points append from entity @s Pos
 kill @s
-execute as @n[type=marker,tag=astar] run function code:loop
+execute as @n[type=marker,tag=astar] at @s run function code:loop
 
 
 #code:main.mcfunction:
 
-execute store success score found my_score at @n[tag=target] if function astar:_ as @n[type=marker,tag=astar] run function code:loop
+execute store success score found my_score at @n[tag=target] if function astar:_ as @n[type=marker,tag=astar,sort=furthest] at @s run function code:loop
 execute unless score found my_score matches 1 run function code:set_direct_target # Walk directly towards target if no path is found
 ```
