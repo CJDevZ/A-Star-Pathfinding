@@ -1,1 +1,1 @@
-return run execute if loaded ~ ~ ~ align xyz positioned ~ ~-1 ~ as @n[type=marker,tag=astar,tag=astar.path,tag=!astar.finished,dx=0,dy=2,dz=0] positioned ~.5 ~1.5 ~.5 run function astar:update
+return run execute as @n[type=marker,tag=astar,tag=astar.path,tag=!astar.finished,dx=0,dy=2,dz=0] positioned ~.5 ~1.5 ~.5 run function astar:update
